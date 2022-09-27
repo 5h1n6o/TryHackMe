@@ -68,7 +68,7 @@ $ find / -perm -u=s -type f 2>/dev/null # SUIDビットガセットされてい�
 - [https://www.linuxkernelcves.com/cves](https://www.linuxkernelcves.com/cves)
 - LES (Linux Exploit Suggester) などのスクリプトを使用する
 
-### 質問の答え
+### タスク5の質問と解答
 
 [ここ](https://www.exploit-db.com/exploits/37292)にあるコードをコンパイルして実行するとルートになれる
 
@@ -117,8 +117,7 @@ sudoで実行できるプログラムを実行時に、この共有オブジェ�
 ```shell
 sudo LD_PRELOAD=/home/user/ldpreload/shell.so find
 ```
-
-### 質問の答え
+### タスク6の質問と解答
 
 1. sudo -lの出力を確認すればよい
 2. /home/ubuntuにflag2.txtがあるのでcatで見る
@@ -128,4 +127,12 @@ sudo LD_PRELOAD=/home/user/ldpreload/shell.so find
 
 ## Task7 Privilege Escalation:SUID
 
+opensslを使用したハッシュパスワードの作成
+
+```shell
+$ openssl passwd -l -salt THM password1
+$1$THM$WnbwlliCqxFRQepUTCkUT1
+```
+
+### タスク7質問と解答
 

